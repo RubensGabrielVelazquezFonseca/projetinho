@@ -1,0 +1,107 @@
++--------------------+
+| Database           |
++--------------------+
+| BDLocadora         |
+| BD_Locadora        |
+| adoblog            |
+| dblocadora         |
+| dpxPTO             |
+| ifpr_store         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| sys                |
+| usuario_acl        |
++--------------------+
+12 rows in set (0,00 sec)
+
+mysql> use dblocadora;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-----------------------+
+| Tables_in_dblocadora  |
++-----------------------+
+| tbcategoria           |
+| tbclasse              |
+| tbcliente             |
+| tbemprestimodevolucao |
+| tbfilme               |
+| tbtitulo              |
++-----------------------+
+6 rows in set (0,00 sec)
+
+mysql> select * from tbcategoria;
++------------------+----------------+
+| codigo_categoria | nome_categoria |
++------------------+----------------+
+|                1 | Acao           |
+|                2 | Aventura       |
+|                3 | Isekai         |
+|                4 | Comedia        |
+|                5 | romance        |
++------------------+----------------+
+5 rows in set (0,00 sec)
+
+mysql> select * from tbclasse;
++---------------+-------------+--------------+
+| codigo_classe | nome_classe | preco_classe |
++---------------+-------------+--------------+
+|             1 | Lançamento  |        12.00 |
+|             2 | Lançamento  |        90.00 |
+|             3 | Lançamento  |        30.00 |
+|             4 | Lançamento  |        15.00 |
+|             5 | Lançamento  |        34.00 |
++---------------+-------------+--------------+
+5 rows in set (0,00 sec)
+
+mysql> select * from tbcliente;
++------------+-------------+----------+---------------+----------------+--------+
+| codigo_cli | CPF_cli     | nome_cli | data_cadastro | cidade_cli     | UF_cli |
++------------+-------------+----------+---------------+----------------+--------+
+|          1 | 12345678911 | Pedro    | 2021-10-15    | Foz do Iguaçu  | PR     |
+|          2 | 92730491090 | Rubens   | 2021-12-05    | Curitiba       | PR     |
+|          3 | 41874322058 | Caio     | 2021-04-20    | Rio de Janeiro | RJ     |
+|          4 | 89766895007 | Lukas    | 2021-12-24    | Sao Paulo      | SP     |
+|          5 | 95058095068 | Luis     | 2021-07-11    | Foz do Iguaçu  | PR     |
++------------+-------------+----------+---------------+----------------+--------+
+5 rows in set (0,00 sec)
+
+mysql> select * from tbemprestimodevolucao;
++------------+--------------+-----------------+-------------------------+------------------------+-------------+
+| codigo_cli | codigo_filme | data_emprestimo | data_devolucao_prevista | data_devolucao_efetiva | valor_multa |
++------------+--------------+-----------------+-------------------------+------------------------+-------------+
+|          1 |            1 | 2022-01-05      | 2022-02-05              | 2022-02-10             |       10.00 |
+|          2 |            2 | 2022-02-03      | 2022-03-03              | 2022-03-10             |       26.00 |
+|          3 |            3 | 2022-02-10      | 2022-03-10              | 2022-03-18             |       30.00 |
+|          4 |            4 | 2022-02-20      | 2022-03-20              | 2022-05-10             |       99.99 |
+|          5 |            5 | 2022-02-27      | 2022-03-28              | 2022-04-05             |       58.00 |
++------------+--------------+-----------------+-------------------------+------------------------+-------------+
+5 rows in set (0,00 sec)
+
+mysql> select * from tbfilme;
++--------------+---------------+--------------------+
+| codigo_filme | codigo_titulo | nome_distribuidor  |
++--------------+---------------+--------------------+
+|            1 |             1 | Cinepix            |
+|            2 |             2 | Paris Entertemit   |
+|            3 |             3 | Fenix Guarujá      |
+|            4 |             4 | Gavéa das graças   |
+|            5 |             5 | Rio Filmes         |
++--------------+---------------+--------------------+
+5 rows in set (0,00 sec)
+
+mysql> select * from tbtitulo;
++---------------+---------------------------+------+------------------+---------------+
+| codigo_titulo | nome_titulo               | ano  | codigo_categoria | codigo_classe |
++---------------+---------------------------+------+------------------+---------------+
+|             1 | Indiana Jones             | 2002 |                1 |             1 |
+|             2 | Hugo - Animal da floresta | 2008 |                2 |             2 |
+|             3 | SAO                       | 2012 |                3 |             3 |
+|             4 | Minami-ke                 | 2010 |                4 |             4 |
+|             5 | Toradora                  | 2011 |                5 |             5 |
++---------------+---------------------------+------+------------------+---------------+
+5 rows in set (0,00 sec)
